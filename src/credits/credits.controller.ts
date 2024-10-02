@@ -45,6 +45,8 @@ export class CreditsController {
   }
 
   @Get('status-count')
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard)
   @ApiResponse({
     status: 200,
     description: 'Returns the count of approved and refused credit requests.',
